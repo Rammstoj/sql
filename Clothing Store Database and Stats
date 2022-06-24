@@ -1,0 +1,34 @@
+--create a clothing store
+
+CREATE TABLE clothing (id integer primary key, item text, quantity integer, aisle integer, price integer, section text);
+
+insert into clothing values (1, "shirt", 5, 1, 1.99, "men's");
+insert into clothing values (2, "polo", 6, 2, 2.99, "women's");
+insert into clothing values (3, "short", 2, 3, 3.99, "women's");
+insert into clothing values (4, "pants", 5, 2, 4.99, "men's");
+insert into clothing values (5, "socks", 6, 1, 0.99, "women's");
+insert into clothing values (6, "cufflinks", 10, 2, 1.49, "men's");
+insert into clothing values (7, "sunglasses", 20, 3, 10.49, "men's");
+insert into clothing values (8, "polo shirt", 5, 2, 5.99, "men's");
+insert into clothing values (9, "ties", 10, 1, 2.99, "men's");
+insert into clothing values (10, "jeans", 12, 3, 40.99, "women's");
+insert into clothing values (11, "underwear", 10, 2, 9.99, "women's");
+insert into clothing values (12, "jackets", 5, 3, 20.99, "men's");
+insert into clothing values (13, "pijamas", 10, 1, 5.49, "women's");
+insert into clothing values (14, "shoes", 20, 3, 40.99, "women's");
+insert into clothing values (15, "boots", 10, 3, 60.99, "men's");
+
+
+--display the database order by price.
+SELECT * FROM clothing 
+ORDER BY price asc;
+
+----what items are avaible in both sections and what are the prices?
+SELECT section, price 
+FROM clothing ORDER BY section
+
+-- what is total price of each item order by section?
+SELECT item, section,
+price*quantity AS total_price
+FROM clothing
+ORDER BY section;
